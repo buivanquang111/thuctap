@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/linerlayout_mypager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#E86632">
+
+        <TextView
+            android:id="@+id/txt_tenthanhvien_mypager"
+            android:text="abcd"
+            android:textSize="30dp"
+            android:textColor="#ffff"
+            android:paddingLeft="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/image_setting_mypager"
+                android:src="@drawable/ic_thongtincanhan"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <TextView
+                android:text="Thông tin cá nhân"
+                android:textSize="20dp"
+                android:textColor="@color/text"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

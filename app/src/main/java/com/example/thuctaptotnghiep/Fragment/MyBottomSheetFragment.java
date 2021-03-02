@@ -64,12 +64,12 @@ public class MyBottomSheetFragment extends BottomSheetDialogFragment {
     String iduser="";
     String idproduct="";
     String str_sl="";
-    String soluongmoi="";
+    String soluongmoi;
     GioHang gioHang;
     public  static List<GioHang> listGioHang;
     BottomSheetDialog bottomSheetDialog;
     ProgressDialog progressDialog;
-    int dem=1;
+    int dem=0;
     int ma;
 
     public static MyBottomSheetFragment getInstance(Product p,User user){
@@ -179,7 +179,7 @@ txttest=view.findViewById(R.id.txttest);
         btn_dathang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 progressDialog = new ProgressDialog(getContext());
+                progressDialog = new ProgressDialog(getContext());
                 progressDialog.setTitle("Please wait...");
                 progressDialog.show();
 
@@ -188,9 +188,188 @@ txttest=view.findViewById(R.id.txttest);
                 str_sl = ed_sl.getText().toString();
 
 
+//                StringRequest stringRequest=new StringRequest(Request.Method.POST, Server.url_getgiohangwithid, new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        int id=0;
+//                        String idproducts="";
+//                        String tendangnhap="";
+//                        String title="";
+//                        double price=0;
+//                        String image="";
+//                        int soluong_mua=0;
+//
+//                        double tien=0;
+//
+//                        try {
+//                            JSONArray array=new JSONArray(response);
+//                            for(int i=0;i<array.length();i++){
+//                                JSONObject object=array.getJSONObject(i);
+//
+//                                id=object.getInt("id");
+//                                idproducts=object.getString("idproduct");
+//                                tendangnhap=object.getString("tendangnhap");
+//                                title=object.getString("title");
+//                                price=object.getDouble("price");
+//                                image=object.getString("image");
+//                                soluong_mua=object.getInt("soluongmua");
+//
+//
+//                                gioHang=new GioHang(id,idproducts,tendangnhap,title,price,image,soluong_mua);
+//                                listGioHang.add(gioHang);
+//
+//
+//                            }
+//                    int sl=0;
+//                    for(int i=0;i<listGioHang.size();i++){
+//                        if(listGioHang.get(i).getIdproduct().equals(idproduct)){
+//
+//                            sl+=listGioHang.get(i).getSoluong_mua();
+//                        }
+//                    }
+//                    soluongmoi= String.valueOf(sl);
+//
+//                    if (listGioHang.size()<=0) {
+//
+//                        //chen vao giohang
+//                        StringRequest request3 = new StringRequest(Request.Method.POST, Server.url_insertGiohang, new Response.Listener<String>() {
+//                            @Override
+//                            public void onResponse(String response) {
+//                                if (response.trim().equals("registered successfully")) {
+//                                    progressDialog.dismiss();
+//                                    bottomSheetDialog.dismiss();
+//
+//                                    //Toast.makeText(getContext(), "đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+//                                    chuyenDuLieuSangFragmentGioHang(GioHangFragment.getInstance(iduser));
+//
+//
+//                                }
+//
+//
+//                            }
+//                        }, new Response.ErrorListener() {
+//                            @Override
+//                            public void onErrorResponse(VolleyError error) {
+//                                progressDialog.dismiss();
+//
+//                            }
+//                        }
+//                        ) {
+//                            @Override
+//                            protected Map<String, String> getParams() throws AuthFailureError {
+//                                Map<String, String> params = new HashMap<String, String>();
+//
+//                                params.put("iduser", iduser);
+//                                params.put("idproduct", idproduct);
+//                                params.put("soluong", str_sl);
+//
+//                                return params;
+//                            }
+//                        };
+//                        RequestQueue requestQueue3 = Volley.newRequestQueue(getContext());
+//                        requestQueue3.add(request3);
+//                    }
+//                    else {
+//
+//
+//
+//                                //xoa product di
+//                                StringRequest request = new StringRequest(Request.Method.POST, Server.url_deletegiohang, new Response.Listener<String>() {
+//                                    @Override
+//                                    public void onResponse(String response) {
+////insert lai du lieu vs sl moi
+//                                        StringRequest request2 = new StringRequest(Request.Method.POST, Server.url_insertGiohang, new Response.Listener<String>() {
+//                                            @Override
+//                                            public void onResponse(String response) {
+//                                                if (response.trim().equals("registered successfully")) {
+//                                                    progressDialog.dismiss();
+//                                                    bottomSheetDialog.dismiss();
+//
+//                                                    //Toast.makeText(getContext(), "đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+//                                                    chuyenDuLieuSangFragmentGioHang(GioHangFragment.getInstance(iduser));
+//
+//
+//                                                }
+//
+//
+//                                            }
+//                                        }, new Response.ErrorListener() {
+//                                            @Override
+//                                            public void onErrorResponse(VolleyError error) {
+//                                                progressDialog.dismiss();
+//
+//                                            }
+//                                        }
+//                                        ) {
+//                                            @Override
+//                                            protected Map<String, String> getParams() throws AuthFailureError {
+//                                                Map<String, String> params = new HashMap<String, String>();
+//
+//                                                params.put("iduser", iduser);
+//                                                params.put("idproduct", idproduct);
+//                                                params.put("soluong", soluongmoi);
+//
+//                                                return params;
+//                                            }
+//                                        };
+//                                        RequestQueue requestQueue2 = Volley.newRequestQueue(getContext());
+//                                        requestQueue2.add(request2);
+//                                    }
+//                                }, new Response.ErrorListener() {
+//                                    @Override
+//                                    public void onErrorResponse(VolleyError error) {
+//                                        progressDialog.dismiss();
+//
+//                                    }
+//                                }
+//                                ) {
+//                                    @Override
+//                                    protected Map<String, String> getParams() throws AuthFailureError {
+//                                        Map<String, String> params = new HashMap<String, String>();
+//
+//                                        params.put("iduser", iduser);
+//                                        params.put("idproduct", idproduct);
+//
+//
+//                                        return params;
+//                                    }
+//                                };
+//                                RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
+//                                requestQueue1.add(request);
+//
+//
+//
+//
+//
+//
+//                    }
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//                    }
+//                }, new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+//                    }
+//                }){
+//                    @Override
+//                    protected Map<String, String> getParams() throws AuthFailureError {
+//                        Map<String,String> params=new HashMap<>();
+//                        params.put("iduser",iduser);
+//                        params.put("idproduct",idproduct);
+//                        return params;
+//                    }
+//                };
+//                Volley.newRequestQueue(getContext()).add(stringRequest);
 
 
-                    StringRequest request = new StringRequest(Request.Method.POST, Server.url_insertGiohang, new Response.Listener<String>() {
+
+                //
+
+                StringRequest request = new StringRequest(Request.Method.POST, Server.url_insertGiohang, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             if (response.trim().equals("registered successfully")) {
@@ -229,7 +408,9 @@ txttest=view.findViewById(R.id.txttest);
 
             }
 
+
         });
+
 
 
 
@@ -239,44 +420,6 @@ txttest=view.findViewById(R.id.txttest);
         return bottomSheetDialog;
     }
 
-//    private void insertgiohang(String iduser,String idproduct,String str_sl){
-//        StringRequest request = new StringRequest(Request.Method.POST, Server.url_insertGiohang, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-//                if (response.trim().equals("registered successfully")) {
-//                    progressDialog.dismiss();
-//                    bottomSheetDialog.dismiss();
-//
-//                    Toast.makeText(getContext(), "đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
-//                    chuyenDuLieuSangFragmentGioHang(GioHangFragment.getInstance(iduser));
-//
-//
-//                }
-//
-//
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                progressDialog.dismiss();
-//
-//            }
-//        }
-//        ) {
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                Map<String, String> params = new HashMap<String, String>();
-//
-//                params.put("iduser", iduser);
-//                params.put("idproduct", idproduct);
-//                params.put("soluong", str_sl);
-//
-//                return params;
-//            }
-//        };
-//        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-//        requestQueue.add(request);
-//    }
 
     private void chuyenDuLieuSangFragmentGioHang(Fragment fragment){
         FragmentTransaction transaction=getFragmentManager().beginTransaction();
@@ -287,104 +430,104 @@ txttest=view.findViewById(R.id.txttest);
     }
 
 
-    private void getgiohang(String id){
-       // final int[] slmoi = {0};
-
-
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, Server.url_getgiohang, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                int id=0;
-                String idproducts="";
-                String tendangnhap="";
-                String title="";
-                double price=0;
-                String image="";
-                int soluong_mua=0;
-
-                double tien=0;
-
-                try {
-                    JSONArray array=new JSONArray(response);
-                    for(int i=0;i<array.length();i++){
-                        JSONObject object=array.getJSONObject(i);
-
-                        id=object.getInt("id");
-                        idproducts=object.getString("idproduct");
-                        tendangnhap=object.getString("tendangnhap");
-                        title=object.getString("title");
-                        price=object.getDouble("price");
-                        image=object.getString("image");
-                        soluong_mua=object.getInt("soluongmua");
-
-
-                        gioHang=new GioHang(id,idproducts,tendangnhap,title,price,image,soluong_mua);
-                        listGioHang.add(gioHang);
-
-
-                    }
-//                    int sl=0;
-//                    for(int i=0;i<listGioHang.size();i++){
-//                        if(listGioHang.get(i).getIdproduct().equals(idproduct)){
+//    private void getgiohang(String id){
+//       // final int[] slmoi = {0};
 //
-//                            sl+=listGioHang.get(i).getSoluong_mua();
-//                        }
+//
+//        StringRequest stringRequest=new StringRequest(Request.Method.POST, Server.url_getgiohang, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                int id=0;
+//                String idproducts="";
+//                String tendangnhap="";
+//                String title="";
+//                double price=0;
+//                String image="";
+//                int soluong_mua=0;
+//
+//                double tien=0;
+//
+//                try {
+//                    JSONArray array=new JSONArray(response);
+//                    for(int i=0;i<array.length();i++){
+//                        JSONObject object=array.getJSONObject(i);
+//
+//                        id=object.getInt("id");
+//                        idproducts=object.getString("idproduct");
+//                        tendangnhap=object.getString("tendangnhap");
+//                        title=object.getString("title");
+//                        price=object.getDouble("price");
+//                        image=object.getString("image");
+//                        soluong_mua=object.getInt("soluongmua");
+//
+//
+//                        gioHang=new GioHang(id,idproducts,tendangnhap,title,price,image,soluong_mua);
+//                        listGioHang.add(gioHang);
+//
+//
 //                    }
-//                    slmoi[0] =sl;
-//                    //soluongmoi=String.valueOf(sl+Integer.parseInt(str_sl));
-//                    Log.d("aaa",soluongmoi);
+////                    int sl=0;
+////                    for(int i=0;i<listGioHang.size();i++){
+////                        if(listGioHang.get(i).getIdproduct().equals(idproduct)){
+////
+////                            sl+=listGioHang.get(i).getSoluong_mua();
+////                        }
+////                    }
+////                    slmoi[0] =sl;
+////                    //soluongmoi=String.valueOf(sl+Integer.parseInt(str_sl));
+////                    Log.d("aaa",soluongmoi);
+//
+//                    //Toast.makeText(getContext(), slmoi[0]+"", Toast.LENGTH_SHORT).show();
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+//            }
+//        }){
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String,String> params=new HashMap<>();
+//                params.put("iduser",id);
+//                return params;
+//            }
+//        };
+//        Volley.newRequestQueue(getContext()).add(stringRequest);
+//
+//
+//    }
 
-                    //Toast.makeText(getContext(), slmoi[0]+"", Toast.LENGTH_SHORT).show();
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params=new HashMap<>();
-                params.put("iduser",id);
-                return params;
-            }
-        };
-        Volley.newRequestQueue(getContext()).add(stringRequest);
-
-
-    }
-
-    private void updategiohang(String iduser,String idproduct,String soluongmoi){
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, Server.url_updatesoluonggiohang, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                if (response.equals("update successfully")) {
-                    //progressDialog.dismiss();
-                    chuyenDuLieuSangFragmentGioHang(GioHangFragment.getInstance(iduser));
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params=new HashMap<>();
-                params.put("iduser",iduser);
-                params.put("idproduct",idproduct);
-                params.put("soluongmoi",soluongmoi);
-                return params;
-            }
-        };
-        Volley.newRequestQueue(getContext()).add(stringRequest);
-    }
+//    private void updategiohang(String iduser,String idproduct,String soluongmoi){
+//        StringRequest stringRequest=new StringRequest(Request.Method.POST, Server.url_updatesoluonggiohang, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                if (response.equals("update successfully")) {
+//                    //progressDialog.dismiss();
+//                    chuyenDuLieuSangFragmentGioHang(GioHangFragment.getInstance(iduser));
+//                }
+//
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+//            }
+//        }){
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String,String> params=new HashMap<>();
+//                params.put("iduser",iduser);
+//                params.put("idproduct",idproduct);
+//                params.put("soluongmoi",soluongmoi);
+//                return params;
+//            }
+//        };
+//        Volley.newRequestQueue(getContext()).add(stringRequest);
+//    }
 
 }

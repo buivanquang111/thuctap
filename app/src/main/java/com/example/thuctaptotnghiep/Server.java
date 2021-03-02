@@ -21,5 +21,9 @@ public class Server {
     public static String url_getgiohang="http://thuctap2021.000webhostapp.com/getgiohang.php";
     public static String url_updatesoluonggiohang="http://thuctap2021.000webhostapp.com/updateSoLuongMuaGioHang.php";
     public static String url_gettintuc="http://thuctap2021.000webhostapp.com/getTinTuc.php";
+    public static String url_deletegiohang="http://thuctap2021.000webhostapp.com/deletegiohang.php";
+    public static String url_getgiohangwithid="http://thuctap2021.000webhostapp.com/getgiohangwithIduserAndIdProduct.php";
+    public static String url_inserthoadon="http://thuctap2021.000webhostapp.com/insertHoaDon.php";
+
 
 }

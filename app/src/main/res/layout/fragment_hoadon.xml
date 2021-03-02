@@ -1,83 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-
-    tools:context=".RegisterActivity">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_title_giohang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal">
             <ImageView
-                android:id="@+id/img_back"
+                android:id="@+id/image_back_hoadon"
                 android:src="@drawable/ic_back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"/>
             <TextView
-                android:gravity="center_horizontal"
-                android:layout_marginRight="20dp"
-                android:textSize="35dp"
-                android:textColor="#0C0C0C"
-                android:text="Đăng kí"
+                android:text="Hóa đơn"
+                android:textSize="30dp"
+                android:textColor="@color/text"
+                android:fontFamily="serif"
+                android:gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50dp"/>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
         <EditText
             android:background="@drawable/custom_editext"
-            android:id="@+id/ed_name"
-            android:hint="họ tên"
+            android:id="@+id/ed_hoten_fragmenthoadon"
+            android:hint="họ tên người nhận"
             android:layout_marginBottom="15dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"/>
         <EditText
             android:background="@drawable/custom_editext"
-            android:id="@+id/ed_tendangnhap"
-            android:hint="tên đăng nhập"
-            android:layout_marginBottom="15dp"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"/>
-        <EditText
-            android:background="@drawable/custom_editext"
-            android:id="@+id/ed_sdt"
+            android:id="@+id/ed_sdt_fragmenthoadon"
             android:hint="số điện thoại"
             android:layout_marginBottom="15dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"/>
         <EditText
             android:background="@drawable/custom_editext"
-            android:id="@+id/ed_email"
+            android:id="@+id/ed_email_fragmenthoadon"
             android:hint="email"
             android:layout_marginBottom="15dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"/>
         <EditText
             android:background="@drawable/custom_editext"
-            android:id="@+id/ed_pass"
-            android:hint="mật khẩu"
+            android:id="@+id/ed_diachinhan_fragmenthoadon"
+            android:hint="địa chỉ nhận"
             android:layout_marginBottom="15dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/btn_register"
-            android:text="Register"
-            android:onClick="Register"
+            android:id="@+id/btn_dathang_fragmenthoadon"
+            android:text="đặt hàng"
             android:layout_width="200dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="wrap_content"/>
 
+    </LinearLayout>
 </LinearLayout>

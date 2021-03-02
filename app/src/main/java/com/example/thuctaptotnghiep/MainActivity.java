@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 import com.example.thuctaptotnghiep.Fragment.DetailFragment;
 import com.example.thuctaptotnghiep.Fragment.DetailMyPageFragment;
+import com.example.thuctaptotnghiep.Fragment.DetailTinTucFragment;
 import com.example.thuctaptotnghiep.Fragment.HomeFragment;
 import com.example.thuctaptotnghiep.Fragment.MyPageFragment;
 import com.example.thuctaptotnghiep.Fragment.SearchFragment;
@@ -19,6 +20,7 @@ import com.example.thuctaptotnghiep.Fragment.ThuongHieuFragment;
 import com.example.thuctaptotnghiep.Fragment.TinTucFragment;
 import com.example.thuctaptotnghiep.Object.Product;
 import com.example.thuctaptotnghiep.Object.ThuongHieu;
+import com.example.thuctaptotnghiep.Object.TinTuc;
 import com.example.thuctaptotnghiep.Object.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
@@ -125,6 +127,19 @@ public class MainActivity extends AppCompatActivity {
         transaction.addToBackStack(searchFragment.TAG);
         transaction.commit();
     }
+    public void goToDetailTinTucFragment(TinTuc tinTuc){
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        DetailTinTucFragment detailTinTucFragment=new DetailTinTucFragment();
+        Bundle bundle=new Bundle();
+        bundle.putSerializable("object_tintuc",tinTuc);
+        detailTinTucFragment.setArguments(bundle);
+
+        fragmentTransaction.replace(R.id.frame_layout,detailTinTucFragment);
+        fragmentTransaction.addToBackStack(DetailTinTucFragment.TAG);
+        fragmentTransaction.commit();
+
+    }
+
 //    public void goToDetailMyPageFragment(){
 //        FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
 //        DetailMyPageFragment detailMyPageFragment=new DetailMyPageFragment();

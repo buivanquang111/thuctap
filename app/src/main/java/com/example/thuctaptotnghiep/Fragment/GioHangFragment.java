@@ -145,7 +145,7 @@ public class GioHangFragment extends Fragment {
                     for(int i=0;i<array.length();i++){
                         JSONObject object=array.getJSONObject(i);
 
-                        id=object.getInt("id");
+                        id=object.getInt("idg");
                         idproduct=object.getString("idproduct");
                         tendangnhap=object.getString("tendangnhap");
                         title=object.getString("title");

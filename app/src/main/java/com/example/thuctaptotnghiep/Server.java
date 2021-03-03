@@ -24,6 +24,11 @@ public class Server {
     public static String url_deletegiohang="http://thuctap2021.000webhostapp.com/deletegiohang.php";
     public static String url_getgiohangwithid="http://thuctap2021.000webhostapp.com/getgiohangwithIduserAndIdProduct.php";
     public static String url_inserthoadon="http://thuctap2021.000webhostapp.com/insertHoaDon.php";
-
-
+    public static String url_deleteitemgiohang="http://thuctap2021.000webhostapp.com/deleteItemGioHang.php";
+    public static String url_insertyeuthich="http://thuctap2021.000webhostapp.com/insertYeuThich.php";
+    public static String url_deleteyeuthich="http://thuctap2021.000webhostapp.com/deleteYeuThich.php";
+    public static String url_getyeuthich="http://thuctap2021.000webhostapp.com/getYeuThich.php";
+    public static String url_getCountYeuThich="http://thuctap2021.000webhostapp.com/getCountYeuThich.php";
+    public static String url_getyeuthichwithiduser="http://thuctap2021.000webhostapp.com/getYeuThichWithIdUser.php";
+    public static String url_uploadImage="http://thuctap2021.000webhostapp.com/uploadImage.php";
 }

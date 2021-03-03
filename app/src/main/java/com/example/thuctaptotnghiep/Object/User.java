@@ -10,6 +10,7 @@ public class User implements Serializable {
     public String tendangnhap;
     public String sdt;
 
+public  User(){}
     public User(int id, String name, String email, String password, String tendangnhap, String sdt) {
         this.id = id;
         this.name = name;

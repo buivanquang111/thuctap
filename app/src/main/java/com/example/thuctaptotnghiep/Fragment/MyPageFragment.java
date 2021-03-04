@@ -235,7 +235,7 @@ public class MyPageFragment extends Fragment {
                     JSONArray array=new JSONArray(response);
                     for(int i=0;i<array.length();i++){
                         JSONObject object=array.getJSONObject(i);
-                        image=object.getString("image");
+                        image=object.getString("photo");
 
                     }
                     Glide.with(getContext()).load(image).into(circleImageView);

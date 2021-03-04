@@ -249,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
         String encodeImage= Base64.encodeToString(imageByteArray,Base64.DEFAULT);
         return encodeImage;
     }
-
+    //
 
     private void getUser(String tendangnhap,String pass) {
         StringRequest stringRequest=new StringRequest(Request.Method.POST, Server.url_getdetailUser, new Response.Listener<String>() {

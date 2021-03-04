@@ -121,12 +121,12 @@ public class MyPageFragment extends Fragment {
             }
         });
 
-        circleImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mMainActivity.chonFileAnh();
-            }
-        });
+//        circleImageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mMainActivity.chonFileAnh();
+//            }
+//        });
         getImageUser(ten,pas);
         return view;
 

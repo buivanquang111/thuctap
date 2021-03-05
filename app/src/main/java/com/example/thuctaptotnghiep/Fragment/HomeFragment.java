@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -80,7 +81,7 @@ public class HomeFragment extends Fragment {
     private EditText ed_search;
     private LinearLayout linearLayout_search;
     private ImageView img_giohang;
-
+    private TextView txt_sosp_giohang;
 
 
     String loai_nam="đồng hồ nam";
@@ -114,6 +115,7 @@ public class HomeFragment extends Fragment {
         ed_search=view.findViewById(R.id.ed_search);
         //linearLayout_search=view.findViewById(R.id.linerlayout_search);
         img_giohang=view.findViewById(R.id.image_giohang_home);
+        txt_sosp_giohang=view.findViewById(R.id.txt_sosp_giohang);
 
         //lay ten dang nhâp và pass
         String ten= (String) getArguments().get("ten_home");
@@ -467,6 +469,41 @@ public class HomeFragment extends Fragment {
 
                         user=new User(id,name,email,password,tendangnhap,sdt);
                     }
+                    //set count vao text gio hang
+                    StringRequest stringRequest=new StringRequest(Request.Method.POST, Server.url_getCountGioHang, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            int count=0;
+
+                            try {
+                                JSONArray array=new JSONArray(response);
+                                for(int i=0;i<array.length();i++){
+                                    JSONObject object=array.getJSONObject(i);
+
+                                    count=object.getInt("count");
+                                }
+                                txt_sosp_giohang.setText(count+"");
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }){
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map<String,String> params=new HashMap<>();
+                            params.put("iduser", String.valueOf(user.getId()));
+
+                            return params;
+                        }
+                    };
+                    Volley.newRequestQueue(getContext()).add(stringRequest);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

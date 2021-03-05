@@ -8,7 +8,7 @@
         android:id="@+id/linerlayout_mypager"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#E86632">
+        android:background="#f5a33f">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_above="@+id/txt_tenthanhvien_mypager"

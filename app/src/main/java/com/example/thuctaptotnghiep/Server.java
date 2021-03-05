@@ -32,6 +32,7 @@ public class Server {
     public static String url_getyeuthichwithiduser="http://thuctap2021.000webhostapp.com/getYeuThichWithIdUser.php";
     public static String url_uploadImage="http://thuctap2021.000webhostapp.com/uploadImage.php";
     public static String url_getUser="http://thuctap2021.000webhostapp.com/getUser.php";
+    public static String url_getCountGioHang="http://thuctap2021.000webhostapp.com/getCountGioHang.php";
 
 
 }

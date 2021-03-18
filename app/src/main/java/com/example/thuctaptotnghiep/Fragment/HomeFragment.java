@@ -69,8 +69,7 @@ public class HomeFragment extends Fragment {
     private List<Product> listproduct_nam;
     private List<Product> listproduct_nu;
     private List<Product> listproduct_capdoi;
-
-    private ThuongHieuAdapter tAdapter;
+   private ThuongHieuAdapter tAdapter;
     private ProductAdapter mAdapter;
 
     private RecyclerView recyclerView_nam;

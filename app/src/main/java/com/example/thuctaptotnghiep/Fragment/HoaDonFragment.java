@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -41,6 +42,7 @@ public class HoaDonFragment extends Fragment {
     public static List<GioHang> listGioHang;
     EditText ed_hoten,ed_sdt,ed_email,ed_diachinhan;
     Button btn_dathang;
+    ImageView img_back;
 
 
 
@@ -54,6 +56,14 @@ public class HoaDonFragment extends Fragment {
         ed_email=view.findViewById(R.id.ed_email_fragmenthoadon);
         ed_diachinhan=view.findViewById(R.id.ed_diachinhan_fragmenthoadon);
         btn_dathang=view.findViewById(R.id.btn_dathang_fragmenthoadon);
+        img_back=view.findViewById(R.id.image_back_hoadon);
+
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
 
         listGioHang=new ArrayList<>();
         Bundle bundle=getArguments();

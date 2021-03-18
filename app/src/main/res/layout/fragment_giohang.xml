@@ -29,6 +29,7 @@
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
+        android:backgroundTint="#D5F4F2F2"
         android:id="@+id/cardview_title_giohang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

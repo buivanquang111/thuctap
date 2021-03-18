@@ -4,13 +4,13 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-
+    android:background="@drawable/anhnen"
     >
 
     <RelativeLayout
-        android:background="#f5a33f"
+
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:gravity="center">
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_home"
@@ -65,13 +65,16 @@
         android:layout_height="wrap_content"
         android:fillViewport="false">
         <LinearLayout
-            android:background="@drawable/anhnen_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
@@ -99,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:fontFamily="casual"
+                    android:fontFamily="serif"
                     android:text="Thương hiệu"
                     android:textSize="25dp"
                     android:textColor="@color/color_selected_bottom_nv"
@@ -121,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:fontFamily="casual"
+                    android:fontFamily="serif"
                     android:text="Đồng hồ nam"
                     android:textSize="25dp"
                     android:textColor="@color/color_selected_bottom_nv"
@@ -143,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:fontFamily="casual"
+                    android:fontFamily="serif"
                     android:text="Đồng hồ nữ"
                     android:textSize="25dp"
                     android:textColor="@color/color_selected_bottom_nv"
@@ -165,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:fontFamily="casual"
+                    android:fontFamily="serif"
                     android:text="Đồng hồ cặp đôi"
                     android:textSize="25dp"
                     android:textColor="@color/color_selected_bottom_nv"

@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
+    android:background="@drawable/nen_dangki"
     tools:context=".RegisterActivity">
 
     <androidx.cardview.widget.CardView
+        android:backgroundTint="#B7FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -43,7 +44,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/anh_dai_dien"
+            android:src="@drawable/ic_thongtincanhan"
             app:civ_border_width="2dp"
             app:civ_border_color="#FF000000"/>
         <EditText
@@ -51,6 +52,7 @@
             android:id="@+id/ed_name"
             android:hint="họ tên"
             android:layout_marginBottom="15dp"
+            android:paddingLeft="10dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"/>
         <EditText
@@ -58,6 +60,7 @@
             android:id="@+id/ed_tendangnhap"
             android:hint="tên đăng nhập"
             android:layout_marginBottom="15dp"
+            android:paddingLeft="10dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"/>
         <EditText
@@ -65,6 +68,7 @@
             android:id="@+id/ed_sdt"
             android:hint="số điện thoại"
             android:layout_marginBottom="15dp"
+            android:paddingLeft="10dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"/>
         <EditText
@@ -72,6 +76,7 @@
             android:id="@+id/ed_email"
             android:hint="email"
             android:layout_marginBottom="15dp"
+            android:paddingLeft="10dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"/>
         <EditText
@@ -79,12 +84,14 @@
             android:id="@+id/ed_pass"
             android:hint="mật khẩu"
             android:layout_marginBottom="15dp"
+            android:paddingLeft="10dp"
             android:layout_width="350dp"
             android:layout_height="wrap_content"/>
         <Button
             android:id="@+id/btn_register"
             android:text="Register"
             android:onClick="Register"
+            android:layout_marginTop="10dp"
             android:layout_width="200dp"
             android:layout_height="wrap_content" />
     </LinearLayout>

@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     Fragment fragment;
    // BottomNavigationView bottomNavigationView;
-    ChipNavigationBar bottomNavigationView;
+    public ChipNavigationBar bottomNavigationView;
     String tendangnhap;
     String pass;
     Bitmap bitmap;

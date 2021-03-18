@@ -6,14 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:mode="same_level"
     app:dragEdge="right"
-    android:layout_margin="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
     app:cardCornerRadius="8dp">
 
     <LinearLayout
         android:id="@+id/linerlayout_itemgiohang"
         android:background="#F11616"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         android:orientation="vertical">
         <ImageView
             android:layout_gravity="center"
@@ -29,8 +32,10 @@
 
     </LinearLayout>
     <androidx.cardview.widget.CardView
+        android:backgroundTint="#E8F8F5F5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="120dp"
@@ -39,6 +44,7 @@
                 android:id="@+id/image_itemgiohang"
                 android:src="@drawable/ic_launcher_background"
                 android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
                 android:scaleType="fitXY"
                 android:layout_width="100dp"
                 android:layout_height="100dp"/>
@@ -56,7 +62,7 @@
                     android:text="aaaaa"
                     android:paddingRight="60dp"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"/>
+                    android:layout_height="45dp"/>
                 <TextView
                     android:id="@+id/txt_gia_itemgiohang"
                     android:textColor="#EF5050"
@@ -65,7 +71,7 @@
                     android:gravity="center"
                     android:paddingRight="60dp"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"/>
+                    android:layout_height="25dp"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp"

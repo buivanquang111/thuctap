@@ -21,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.example.thuctaptotnghiep.MainActivity;
 import com.example.thuctaptotnghiep.Object.Product;
 import com.example.thuctaptotnghiep.Object.User;
 import com.example.thuctaptotnghiep.Object.YeuThich;
@@ -49,11 +50,15 @@ public class DetailFragment extends Fragment {
     String ten;
     String pass;
 
+    MainActivity mainActivity;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_detail,container,false);
+
+//        mainActivity= (MainActivity) getActivity();
+//        mainActivity.bottomNavigationView.setVisibility(View.GONE);
 
         img_back=view.findViewById(R.id.image_backDetail);
         img_detailproduct=view.findViewById(R.id.image_product_detail);
